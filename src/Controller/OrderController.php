@@ -228,7 +228,6 @@ class OrderController extends AbstractController
 
         $content = array_merge(['orderID' => $request->attributes->get('orderID')], $_POST);
 
-        print_r($_POST);
 
         if (!$this->updateOrder($content)) {
             throw $this->createAccessDeniedException(

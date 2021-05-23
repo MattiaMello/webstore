@@ -42,6 +42,11 @@ class Product
      */
     private $status;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image_uri;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,5 +110,24 @@ class Product
         $this->status = $status;
 
         return $this;
+    }
+
+    public function getImageUri(): ?string
+    {
+        return $this->image_uri;
+    }
+
+    public function setImageUri(?string $image_uri): self
+    {
+        $this->image_uri = $image_uri;
+
+        return $this;
+    }
+
+    public function getImagePath()
+    {
+        if(!empty($this->getImageUri())){
+            return '../../images/product/'.$this->getImageUri();
+        }
     }
 }

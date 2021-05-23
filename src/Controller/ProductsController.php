@@ -81,6 +81,9 @@ class ProductsController extends AbstractController
             $alreadyPersisted->setFinalPrice($information['finalPrice']);
             $alreadyPersisted->setCode($information['code']);
             $alreadyPersisted->setStatus($information['status']);
+            if (array_key_exists("imageUri", $information)) {
+                $alreadyPersisted->setImageUri($information['imageUri']);
+            }
 
             // tell Doctrine you want to (eventually) save the Product (no queries yet)
             $entityManager->persist($alreadyPersisted);
@@ -227,15 +230,32 @@ class ProductsController extends AbstractController
 
         $content = array_merge(['uid' => $request->attributes->get('uid')], $_POST);
 
-        print_r($_POST);
+        $uploadOk = true;
 
-        if (!$this->updateProduct($content)) {
-            throw $this->createAccessDeniedException(
-                'Could not update product for uid ' . $request->attributes->get('uid')
-            );
+        if (is_uploaded_file($_FILES['fileToUpload']['tmp_name'])) {
+            $path = $_ENV['PROJECT_DIR'] . "/public/images/product/";
+            $path = $path . basename($_FILES['fileToUpload']['name']);
+            $content = array_merge($content, ["imageUri" => $_FILES['fileToUpload']['name']]);
+
+            if (move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $path)) {
+                echo "The file " .  basename($_FILES['fileToUpload']['name']) .
+                    " has been uploaded";
+                $uploadOk = true;
+            } else {
+                echo "There was an error uploading the file, please try again!";
+                $uploadOk = false;
+            }
         }
 
-        return $this->redirect('/product');
+        if ($uploadOk) {
+            if (!$this->updateProduct($content)) {
+                throw $this->createAccessDeniedException(
+                    'Could not update product for uid ' . $request->attributes->get('uid')
+                );
+            }
+            return $this->redirect('/product');
+        }
+        return $this->redirect('/product/edit/' . $request->attributes->get('uid'));
     }
 
     /**

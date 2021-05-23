@@ -58,6 +58,7 @@ final class Versions
   'psr/container' => '1.1.1@8622567409010282b7aeebe4bb841fe98b58dcaf',
   'psr/log' => '1.1.4@d49695b909c3b7628b6289db5479a1c204601f11',
   'sensio/framework-extra-bundle' => 'v6.1.4@d962626a1b454edb36f727f8e0090b45280af98c',
+  'symfony/apache-pack' => 'v1.0.1@3aa5818d73ad2551281fc58a75afd9ca82622e6c',
   'symfony/asset' => 'v4.4.22@aeedecee0bce60320521083efaf6c359ad710e20',
   'symfony/cache' => 'v4.4.24@9084b7312c3de1e6d621d60e00c5d42a4b77cfee',
   'symfony/cache-contracts' => 'v2.4.0@c0446463729b89dd4fa62e9aeecc80287323615d',

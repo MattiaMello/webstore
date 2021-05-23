@@ -7,7 +7,7 @@
 			{% endblock %}
 		</title>
 		{# Run `composer require symfony/webpack-encore-bundle`
-																				           and uncomment the following Encore helpers to start using Symfony UX #}
+																												           and uncomment the following Encore helpers to start using Symfony UX #}
 		{% block stylesheets %}
 			{#{{ encore_entry_link_tags('app') }}#}
 
@@ -36,10 +36,10 @@
 				<div
 					class="sidebar" data-color="purple" data-background-color="white">
 					<!--
-															                        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-															                
-															                        Tip 2: you can also add an image using data-image tag
-															                    -->
+																																			                        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+																																			                
+																																			                        Tip 2: you can also add an image using data-image tag
+																																			                    -->
 					<div
 						class="logo"><!-- the logo goes here -->
 					</div>
@@ -82,7 +82,7 @@
 						<div
 							class="container-fluid">
 							<!-- your content here -->
-							<form action="/product/edited/{{ data.uid }}" method="post">
+							<form action="/product/edited/{{ data.uid }}" method="post" enctype="multipart/form-data">
 								<div class="row">
 									<div class="col">
 										<input type="text" class="form-control" id="price" name="price" value="{{ data.price }}">
@@ -97,6 +97,15 @@
 										<input type="text" class="form-control" id="status" name="status" value="{{ data.status }}">
 									</div>
 								</div>
+								<br>
+								{% if data.getImagePath is not empty %}
+									<img src="{{ data.getImagePath }}" class="img-fluid" alt="product image">
+								<br>
+								<br>
+								{% endif %}
+								Select an image to upload:
+								<input type="file" name="fileToUpload" id="fileToUpload">
+								<br>
 								<br>
 								<button class="btn">
 									<a href="/product">Cancel</a>

@@ -150,10 +150,10 @@ class __TwigTemplate_e492f1b1bc4c676d92183c86728297203fbd728936c5011ee57cbe0b9bf
 \t\t\t\t<div
 \t\t\t\t\tclass=\"sidebar\" data-color=\"purple\" data-background-color=\"white\">
 \t\t\t\t\t<!--
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 1: You can change the color of the sidebar using: data-color=\"purple | azure | green | orange | danger\"
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 2: you can also add an image using data-image tag
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                    -->
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 1: You can change the color of the sidebar using: data-color=\"purple | azure | green | orange | danger\"
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 2: you can also add an image using data-image tag
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                    -->
 \t\t\t\t\t<div
 \t\t\t\t\t\tclass=\"logo\"><!-- the logo goes here -->
 \t\t\t\t\t</div>
@@ -282,7 +282,7 @@ class __TwigTemplate_e492f1b1bc4c676d92183c86728297203fbd728936c5011ee57cbe0b9bf
 \t\t\t{% endblock %}
 \t\t</title>
 \t\t{# Run `composer require symfony/webpack-encore-bundle`
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t           and uncomment the following Encore helpers to start using Symfony UX #}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t           and uncomment the following Encore helpers to start using Symfony UX #}
 \t\t{% block stylesheets %}
 \t\t\t{#{{ encore_entry_link_tags('app') }}#}
 
@@ -311,10 +311,10 @@ class __TwigTemplate_e492f1b1bc4c676d92183c86728297203fbd728936c5011ee57cbe0b9bf
 \t\t\t\t<div
 \t\t\t\t\tclass=\"sidebar\" data-color=\"purple\" data-background-color=\"white\">
 \t\t\t\t\t<!--
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 1: You can change the color of the sidebar using: data-color=\"purple | azure | green | orange | danger\"
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 2: you can also add an image using data-image tag
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                    -->
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 1: You can change the color of the sidebar using: data-color=\"purple | azure | green | orange | danger\"
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 2: you can also add an image using data-image tag
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                    -->
 \t\t\t\t\t<div
 \t\t\t\t\t\tclass=\"logo\"><!-- the logo goes here -->
 \t\t\t\t\t</div>

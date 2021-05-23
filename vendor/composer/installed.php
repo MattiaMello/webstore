@@ -349,6 +349,15 @@
       ),
       'reference' => 'd962626a1b454edb36f727f8e0090b45280af98c',
     ),
+    'symfony/apache-pack' => 
+    array (
+      'pretty_version' => 'v1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3aa5818d73ad2551281fc58a75afd9ca82622e6c',
+    ),
     'symfony/asset' => 
     array (
       'pretty_version' => 'v4.4.22',

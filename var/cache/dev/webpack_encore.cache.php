@@ -28,6 +28,14 @@ return [[
                 '/build/site.css',
             ],
         ],
+        'login' => [
+            'js' => [
+                '/build/runtime.js',
+            ],
+            'css' => [
+                '/build/login.css',
+            ],
+        ],
     ],
 ],
 

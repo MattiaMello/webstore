@@ -3,7 +3,7 @@
 This is an implementation of a part of an e-commerce using symfony, fixtures, RESTful API calls, encrypted authentication, user masquerading and other functionalities.
 
 # TIME
-10 hours
+11 hours
 
 # Files
 

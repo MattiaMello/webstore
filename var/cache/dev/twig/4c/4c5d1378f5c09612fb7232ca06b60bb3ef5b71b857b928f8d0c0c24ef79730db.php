@@ -66,7 +66,7 @@ class __TwigTemplate_d8747e148a5728756f4d1b386663e09772ef651a351435c0fc70861e6e3
 \t\t";
         // line 33
         $this->displayBlock('body', $context, $blocks);
-        // line 130
+        // line 139
         echo "\t</body>
 </html>
 ";
@@ -150,10 +150,10 @@ class __TwigTemplate_d8747e148a5728756f4d1b386663e09772ef651a351435c0fc70861e6e3
 \t\t\t\t<div
 \t\t\t\t\tclass=\"sidebar\" data-color=\"purple\" data-background-color=\"white\">
 \t\t\t\t\t<!--
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 1: You can change the color of the sidebar using: data-color=\"purple | azure | green | orange | danger\"
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 2: you can also add an image using data-image tag
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                    -->
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 1: You can change the color of the sidebar using: data-color=\"purple | azure | green | orange | danger\"
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 2: you can also add an image using data-image tag
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                    -->
 \t\t\t\t\t<div
 \t\t\t\t\t\tclass=\"logo\"><!-- the logo goes here -->
 \t\t\t\t\t</div>
@@ -199,7 +199,7 @@ class __TwigTemplate_d8747e148a5728756f4d1b386663e09772ef651a351435c0fc70861e6e3
 \t\t\t\t\t\t\t<form action=\"/product/edited/";
         // line 85
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new RuntimeError('Variable "data" does not exist.', 85, $this->source); })()), "uid", [], "any", false, false, false, 85), "html", null, true);
-        echo "\" method=\"post\">
+        echo "\" method=\"post\" enctype=\"multipart/form-data\">
 \t\t\t\t\t\t\t\t<div class=\"row\">
 \t\t\t\t\t\t\t\t\t<div class=\"col\">
 \t\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"price\" name=\"price\" value=\"";
@@ -226,6 +226,22 @@ class __TwigTemplate_d8747e148a5728756f4d1b386663e09772ef651a351435c0fc70861e6e3
         echo "\">
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t\t";
+        // line 101
+        if ( !twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new RuntimeError('Variable "data" does not exist.', 101, $this->source); })()), "getImagePath", [], "any", false, false, false, 101))) {
+            // line 102
+            echo "\t\t\t\t\t\t\t\t\t<img src=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data"]) || array_key_exists("data", $context) ? $context["data"] : (function () { throw new RuntimeError('Variable "data" does not exist.', 102, $this->source); })()), "getImagePath", [], "any", false, false, false, 102), "html", null, true);
+            echo "\" class=\"img-fluid\" alt=\"product image\">
+\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t\t";
+        }
+        // line 106
+        echo "\t\t\t\t\t\t\t\tSelect an image to upload:
+\t\t\t\t\t\t\t\t<input type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\">
+\t\t\t\t\t\t\t\t<br>
 \t\t\t\t\t\t\t\t<br>
 \t\t\t\t\t\t\t\t<button class=\"btn\">
 \t\t\t\t\t\t\t\t\t<a href=\"/product\">Cancel</a>
@@ -268,7 +284,7 @@ class __TwigTemplate_d8747e148a5728756f4d1b386663e09772ef651a351435c0fc70861e6e3
 
     public function getDebugInfo()
     {
-        return array (  225 => 97,  219 => 94,  213 => 91,  207 => 88,  201 => 85,  148 => 34,  141 => 33,  134 => 30,  132 => 29,  125 => 28,  115 => 24,  102 => 13,  100 => 12,  93 => 11,  79 => 6,  70 => 130,  68 => 33,  64 => 31,  62 => 28,  59 => 27,  56 => 11,  53 => 8,  51 => 6,  44 => 1,);
+        return array (  242 => 106,  234 => 102,  232 => 101,  225 => 97,  219 => 94,  213 => 91,  207 => 88,  201 => 85,  148 => 34,  141 => 33,  134 => 30,  132 => 29,  125 => 28,  115 => 24,  102 => 13,  100 => 12,  93 => 11,  79 => 6,  70 => 139,  68 => 33,  64 => 31,  62 => 28,  59 => 27,  56 => 11,  53 => 8,  51 => 6,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -282,7 +298,7 @@ class __TwigTemplate_d8747e148a5728756f4d1b386663e09772ef651a351435c0fc70861e6e3
 \t\t\t{% endblock %}
 \t\t</title>
 \t\t{# Run `composer require symfony/webpack-encore-bundle`
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t           and uncomment the following Encore helpers to start using Symfony UX #}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t           and uncomment the following Encore helpers to start using Symfony UX #}
 \t\t{% block stylesheets %}
 \t\t\t{#{{ encore_entry_link_tags('app') }}#}
 
@@ -311,10 +327,10 @@ class __TwigTemplate_d8747e148a5728756f4d1b386663e09772ef651a351435c0fc70861e6e3
 \t\t\t\t<div
 \t\t\t\t\tclass=\"sidebar\" data-color=\"purple\" data-background-color=\"white\">
 \t\t\t\t\t<!--
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 1: You can change the color of the sidebar using: data-color=\"purple | azure | green | orange | danger\"
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 2: you can also add an image using data-image tag
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                    -->
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 1: You can change the color of the sidebar using: data-color=\"purple | azure | green | orange | danger\"
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        Tip 2: you can also add an image using data-image tag
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                    -->
 \t\t\t\t\t<div
 \t\t\t\t\t\tclass=\"logo\"><!-- the logo goes here -->
 \t\t\t\t\t</div>
@@ -357,7 +373,7 @@ class __TwigTemplate_d8747e148a5728756f4d1b386663e09772ef651a351435c0fc70861e6e3
 \t\t\t\t\t\t<div
 \t\t\t\t\t\t\tclass=\"container-fluid\">
 \t\t\t\t\t\t\t<!-- your content here -->
-\t\t\t\t\t\t\t<form action=\"/product/edited/{{ data.uid }}\" method=\"post\">
+\t\t\t\t\t\t\t<form action=\"/product/edited/{{ data.uid }}\" method=\"post\" enctype=\"multipart/form-data\">
 \t\t\t\t\t\t\t\t<div class=\"row\">
 \t\t\t\t\t\t\t\t\t<div class=\"col\">
 \t\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"price\" name=\"price\" value=\"{{ data.price }}\">
@@ -372,6 +388,15 @@ class __TwigTemplate_d8747e148a5728756f4d1b386663e09772ef651a351435c0fc70861e6e3
 \t\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"status\" name=\"status\" value=\"{{ data.status }}\">
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t\t{% if data.getImagePath is not empty %}
+\t\t\t\t\t\t\t\t\t<img src=\"{{ data.getImagePath }}\" class=\"img-fluid\" alt=\"product image\">
+\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t\tSelect an image to upload:
+\t\t\t\t\t\t\t\t<input type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\">
+\t\t\t\t\t\t\t\t<br>
 \t\t\t\t\t\t\t\t<br>
 \t\t\t\t\t\t\t\t<button class=\"btn\">
 \t\t\t\t\t\t\t\t\t<a href=\"/product\">Cancel</a>
