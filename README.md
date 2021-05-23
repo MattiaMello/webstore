@@ -26,7 +26,7 @@ as the project is brand new, accept the messages prompted and continue the insta
 
 Then check if on your database there's the correct data structure.
 
-Hence enable your web server (wether apache or nginx or flask...) to read php pages and as the main folder set `./public`. You'll then able to access to the localhost address and view the symfony main page.
+Hence enable your web server (wether apache or nginx) to read php pages and as the main folder set `./public`. You'll then able to access to the localhost address and view the symfony main page.
 
 ## Logging in
 
