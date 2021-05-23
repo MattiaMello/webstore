@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Webstore - products
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle`
+																						and uncomment the following Encore helpers to start using Symfony UX #}
+		{% block stylesheets %}
+			{#{{ encore_entry_link_tags('app') }}#}
+
+			<meta charset="utf-8">
+			<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+			<meta
+			http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+			<!--     Fonts and icons     -->
+			<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+			<link
+			rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+			<!-- Material Kit CSS -->
+
+			{{ encore_entry_link_tags('site') }}
+
+		{% endblock %}
+
+		{% block javascripts %}
+			{#{{ encore_entry_script_tags('app') }}#}
+		{% endblock %}
+	</head>
+	<body>
+		{% block body %}
+
+			<div class="wrapper ">
+				<div
+					class="sidebar" data-color="purple" data-background-color="white">
+					<!--
+																Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+														
+																Tip 2: you can also add an image using data-image tag
+															-->
+					<div
+						class="logo"><!-- the logo goes here -->
+					</div>
+					<div class="sidebar-wrapper">
+						<ul class="nav">
+							<li class="nav-item active ">
+								<a class="nav-link" href="/product">
+									<i class="material-icons">products</i>
+									<p>products</p>
+								</a>
+							</li>
+							<li class="nav-item  ">
+								<a class="nav-link" href="/order">
+									<i class="material-icons">orders</i>
+									<p>Orders</p>
+								</a>
+							</li>
+							<!-- your sidebar here -->
+						</ul>
+					</div>
+				</div>
+				<div
+					class="main-panel">
+					<!-- Navbar -->
+					<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+						<div class="container-fluid">
+							<div class="navbar-wrapper">
+								<a class="navbar-brand" href="javascript:;">Products</a>
+							</div>
+							<button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="navbar-toggler-icon icon-bar"></span>
+								<span class="navbar-toggler-icon icon-bar"></span>
+								<span class="navbar-toggler-icon icon-bar"></span>
+							</button>
+						</div>
+					</nav>
+					<!-- End Navbar -->
+					<div class="content">
+						<div
+							class="container-fluid">
+							<!-- your content here -->
+							<a href="/product/fetch">
+								<button type="button" class="btn btn-default">Fetch data</button>
+							</a>
+							{% if notAssistant %}
+								<a href="/product/csv">
+									<button type="button" class="btn btn-default">Export CSV</button>
+								</a>
+							{% endif %}
+							<form action="/product" method="post">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Search query here" name="searchquery">
+									<button type="submit" class="btn btn-primary">
+										<i class="material-icons">search</i>
+									</button>
+								</div>
+							</form>
+							<table class="table">
+								<thead>
+									<tr>
+										<th class="text-center">Uid</th>
+										<th class="text-center">Price</th>
+										<th class="text-center">Final Price</th>
+										<th class="text-center">Code</th>
+										<th class="text-center">Status</th>
+										{% if notAssistant %}
+											<th class="text-center">Actions</th>
+										{% endif %}
+									</tr>
+								</thead>
+								<tbody>
+									{% for article in data %}
+										<tr>
+											<td class="text-center">{{ article.uid }}</td>
+											<td class="text-center">{{ article.price }}</td>
+											<td class="text-center">{{ article.finalPrice }}</td>
+											<td class="text-center">{{ article.code }}</td>
+											<td class="text-center">{{ article.status }}</td>
+											{% if notAssistant %}
+												<td class="td-actions text-center">
+													<a href="product/edit/{{ article.uid }}">
+														<button type="button" rel="tooltip" title="Edit Product" class="btn btn-success btn-simple btn-xs">
+															<i class="fa fa-edit"></i>
+														</button>
+													</a>
+													<a href="product/delete/{{ article.uid }}">
+														<button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+															<i class="fa fa-times"></i>
+														</button>
+													</a>
+												</td>
+											{% endif %}
+										</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<footer class="footer">
+						<div class="container-fluid">
+							<nav class="float-left">
+								<ul>
+									<li><a href="https://www.mattiamello.net">Tia</a></li>
+								</ul>
+							</nav>
+							<div class="copyright float-right">
+								&copy;
+								<script>
+									document.write(new Date().getFullYear())
+								</script>, made by
+								<a href="https://www.mattiamello.net" target="_blank">Tia</a>
+								for testing purpose.
+							</div>
+							<!-- your footer here -->
+						</div>
+					</footer>
+				</div>
+			</div>
+
+		{% endblock %}
+	</body>
+</html>
