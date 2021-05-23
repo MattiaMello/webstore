@@ -51,7 +51,7 @@ Westore-->>Database: delete X
 Westore-->>User: Promts the view
 ```
 
-And this will produce a flow chart:
+Flow chart:
 
 ```mermaid
 graph LR
