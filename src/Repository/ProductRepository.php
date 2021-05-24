@@ -25,17 +25,20 @@ class ProductRepository extends ServiceEntityRepository
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('p')
-        ->andWhere('p.uid = :val')
-        ->andWhere('p.price = :val')
-        ->andWhere('p.final_price = :val')
-        ->andWhere('p.code = :val')
-        ->andWhere('p.status = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
+            ->orWhere('p.uid LIKE :t_uid')
+            ->setParameter('t_uid', '%' . $value . '%')
+            ->orWhere('p.price LIKE :t_price')
+            ->setParameter('t_price', '%' . $value . '%')
+            ->orWhere('p.final_price LIKE :t_finalPrice')
+            ->setParameter('t_finalPrice', '%' . $value . '%')
+            ->orWhere('p.code LIKE :t_code')
+            ->setParameter('t_code', '%' . $value . '%')
+            ->orWhere('p.status LIKE :t_status')
+            ->setParameter('t_status', '%' . $value . '%')
+            ->orderBy("p.id", "ASC")
             // ->setMaxResults(10)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
 
     /*

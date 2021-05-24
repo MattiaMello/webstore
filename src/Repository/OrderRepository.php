@@ -25,17 +25,25 @@ class OrderRepository extends ServiceEntityRepository
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('p')
-        ->andWhere('p.orderID = :val')
-        ->andWhere('p.total = :val')
-        ->andWhere('p.orderDate = :val')
-        ->andWhere('p.status = :val')
-        ->andWhere('p.locale = :val')
-            ->setParameter('val', $value)
+            ->orWhere('p.orderID LIKE :t_oId')
+            ->setParameter('t_oId', '%' . $value . '%')
+
+            ->orWhere('p.total LIKE :t_tot')
+            ->setParameter('t_tot', '%' . $value . '%')
+
+            ->orWhere('p.orderDate LIKE :t_oDate')
+            ->setParameter('t_oDate', '%' . $value . '%')
+
+            ->orWhere('p.status LIKE :t_status')
+            ->setParameter('t_status', '%' . $value . '%')
+
+            ->orWhere('p.locale LIKE :t_locale')
+            ->setParameter('t_locale', '%' . $value . '%')
+
             ->orderBy('p.id', 'ASC')
             // ->setMaxResults(10)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
 
     /*
