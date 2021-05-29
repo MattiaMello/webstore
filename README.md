@@ -1,6 +1,6 @@
 # Welcome to WebStore!
 
-This is an implementation of a part of an e-commerce using symfony, fixtures, RESTful API calls, encrypted authentication, user masquerading and other functionalities.
+This is an implementation of a part of an e-commerce component using symfony, fixtures, RESTful API calls, encrypted authentication, user masquerading and other functionalities.
 
 # TIME
 11 hours
