@@ -17,7 +17,7 @@ To install the webstore application, ensure that the project files are located o
 
 Open your DBMS and create a databse called `webstore`
 
-Then, open the terminal and move into it. Ensure your database service is running and php is installed and on the command prompt, run:
+Then, open the terminal and move into the project folder. Ensure that your database service is running and php is installed. Then, on the command prompt, run:
 
 - `php bin/console doctrine:migrations:migrate`
 - `php bin/console doctrine:fixtures:load`
@@ -26,7 +26,7 @@ as the project is brand new, accept the messages prompted and continue the insta
 
 Then check if on your database there's the correct data structure.
 
-Hence enable your web server (wether apache or nginx) to read php pages and as the main folder set `./public`. You'll then able to access to the localhost address and view the symfony main page.
+Hence check if your web server (wether apache or nginx) is allowed to interpret php pages. As the main folder, set `./public`. You'll then be able to access to the localhost address and view the symfony main page.
 
 ## Logging in
 
