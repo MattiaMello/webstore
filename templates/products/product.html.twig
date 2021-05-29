@@ -7,7 +7,7 @@
 			{% endblock %}
 		</title>
 		{# Run `composer require symfony/webpack-encore-bundle`
-																						and uncomment the following Encore helpers to start using Symfony UX #}
+																												and uncomment the following Encore helpers to start using Symfony UX #}
 		{% block stylesheets %}
 			{#{{ encore_entry_link_tags('app') }}#}
 
@@ -36,10 +36,10 @@
 				<div
 					class="sidebar" data-color="purple" data-background-color="white">
 					<!--
-																Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-														
-																Tip 2: you can also add an image using data-image tag
-															-->
+																															Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+																													
+																															Tip 2: you can also add an image using data-image tag
+																														-->
 					<div
 						class="logo"><!-- the logo goes here -->
 					</div>
@@ -137,6 +137,15 @@
 									{% endfor %}
 								</tbody>
 							</table>
+							{% if viewEnd != 0 %}
+								<div align="center">
+
+									{% for i in viewStart..viewEnd %}
+										<p>acacacac
+										</p>
+									{% endfor %}
+								</div>
+							{% endif %}
 						</div>
 					</div>
 					<footer class="footer">

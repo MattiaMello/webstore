@@ -145,6 +145,12 @@ class ProductsController extends AbstractController
             ->findByExampleField($query);
     }
 
+    private function subdivideForRender($content, $start, $end)
+    {
+        $content = array_slice($start, $end - $start);
+        return $content;
+    }
+
     /**
      * @Route("/product/csv", name="exportProductsCSV")
      * 
@@ -188,7 +194,15 @@ class ProductsController extends AbstractController
             $notAssistant = false;
         }
         $content = $this->retrieveAllDataFromLocalStorage();
-        return $this->render('products/product.html.twig', ['data' => $content, 'notAssistant' => $notAssistant]);
+        $viewStart = 0;
+        $viewEnd = 0;
+
+        if (isset($_POST['VIEW_START']) && isset($_POST['VIEW_END'])) {
+            $content = $this->subdivideForRender($content, $_POST['VIEW_START'], $_POST['VIEW_END']);
+            $viewStart = $_POST['VIEW_START'];
+            $viewEnd = $_POST['VIEW_END'];
+        }
+        return $this->render('products/product.html.twig', ['data' => $content, 'notAssistant' => $notAssistant, 'viewStart' => $viewStart, 'viewEnd' => $viewEnd]);
     }
 
     /**
